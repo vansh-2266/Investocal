@@ -20,7 +20,7 @@ section{
 
 header{
   position: absolute;
-  top: 0;
+  top: 10px;
   left: 0;
   width: 100%;
   padding: 20px 100px;
@@ -67,11 +67,13 @@ header ul li a::after{
   left: 0;
   bottom: -6px;
   transition: 0.5s;
+  text-decoration: none;
 }
 header ul li a:hover::after{
   color: #fff;
   font-weight: 900;
   width: 100%;
+  text-decoration: none;
 }
 
 /* navbar ending */
@@ -82,12 +84,13 @@ header ul li a:hover::after{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 30px;
 }
 
 .content .textBox{
   position: relative;
   max-width: 600px;
-  /* margin-top: 25vh; */
+  margin-top: 10px;
 }
 
 .content .textBox h2{
@@ -171,7 +174,121 @@ header ul li a:hover::after{
   width: 100%;
   height: 100%;
   background-color: #0099ff;
-  clip-path: circle(840px at right 630px );
+  clip-path: circle(870px at right 630px );
+}
+
+
+/* *****responsive media querie****** */
+@media (max-width: 991px){
+  
+  header{
+    padding: 20px;
+    /* margin-top: 10px; */
+  }
+
+  header .logo{
+    max-width: 80px;
+  }
+
+  header ul{
+    display: none;
+  }
+
+  .toggle{
+    position: relative;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+    background: url(img/menu.png);
+    background-size: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: invert(1);
+    z-index: 11;
+  }
+
+  .toggle.active
+  {
+    position: fixed;
+    right: 20px;
+    background: url(img/close.png);
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
+
+  header ul.navigation.active{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    z-index: 10;
+  }
+
+  header ul li a{
+    color: #333;
+    font-size: 2rem;
+    margin: 5px 0px;
+  }
+
+  section{
+     padding: 20px 20px 120px;
+  }
+  
+  .content{
+    flex-direction: column;
+    margin-top: 100px;
+    
+  }
+
+  .content .textBox h2{
+    font-size: 2.5em;
+  }
+
+  .content .textBox{
+    max-width: 100%;
+    margin-top: 70px;
+  }
+
+  .content .imgBox{
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .content .imgBox img{
+    width: 940px;
+    margin-bottom: 0px;
+  }
+
+  .circle {
+    clip-path: circle(500px at center bottom);
+  }
+
+  .sci{
+    background: #0099ff;
+    right: 0;
+    width: 60px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .sci li {
+    margin-right: 30px;
+    list-style: none;
+}
+
+ .sci li a{
+  transform: scale(1.3);
+  padding: 6px;
+ }
+
 }
 
 /* ********** cover page css end *********** */
